@@ -1,0 +1,20 @@
+{
+    "name": "castiron/typo3-customcontent",
+    "description": "A lightweight library of TYPO3 DBAL helpers",
+    "type": "library",
+    "require": {
+        "typo3/cms": "^8.7"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Gabe Blair",
+            "email": "gabe@castironcoding.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Castiron\\CustomContent\\": "src/"
+        }
+    }
+}
