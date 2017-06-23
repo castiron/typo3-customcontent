@@ -28,7 +28,7 @@ class CustomContentElementUtility {
      * @param string $extKey
      * @param string $ceKey
      * @param array $ceConf
-     * @param string $vendorPrefix A vendor prefix for your namespace (like 'CIC'). You need this if your controller uses a namespaced classname.
+     * @param string $vendorPrefix A vendor prefix for your namespace (like 'Castiron'). You need this if your controller uses a namespaced classname.
      * @param string $customContentElementController
      * @throws \TYPO3\CMS\Core\Error\Exception
      */
@@ -57,7 +57,7 @@ class CustomContentElementUtility {
             $ceKey,
             $cacheableAction,
             $nonCacheableAction,
-            'CType'
+            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
         );
 
         // Unset default TS config.
