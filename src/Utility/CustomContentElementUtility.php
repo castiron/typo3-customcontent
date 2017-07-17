@@ -112,7 +112,8 @@ tt_content.${typeId}.10 >
     protected static function addCustomContentElementType($extKey, $ceKey, $ceConf) {
         global $TCA;
 
-        ExtensionUtility::registerPlugin($extKey, $ceKey, $ceConf['label']);
+        $iconPath = $ceConf['iconPath'] ?: 'EXT:core/Resources/Public/Icons/T3Icons/content/content-menu-pages.svg';
+        ExtensionUtility::registerPlugin($extKey, $ceKey, $ceConf['label'], $iconPath);
 
         $typeId = static::typeId($extKey, $ceKey);
         $TCA['tt_content']['types'][$typeId]['showitem'] = $ceConf['ui'];
