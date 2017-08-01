@@ -85,7 +85,8 @@ tt_content.${typeId}.10 >
      * @return string
      */
     protected static function typeId($extKey, $ceKey) {
-        return "{$extKey}_{$ceKey}";
+        $normalized = static::normalizeExtKey($extKey);
+        return "{$normalized}_{$ceKey}";
     }
 
     /**
@@ -124,6 +125,15 @@ tt_content.${typeId}.10 >
         if ($ceConf['flexform']) {
             $TCA['tt_content']['columns']['pi_flexform']['config']['ds']["*,{$typeId}"] = $ceConf['flexform'];
         }
+    }
+
+    /**
+     * @param $extensionName
+     * @return string
+     */
+    protected static function normalizeExtKey($extensionName) {
+        $extensionName = strtolower(str_replace(' ', '', ucwords(str_replace('_', ' ', $extensionName))));
+        return GeneralUtility::camelCaseToLowerCaseUnderscored($extensionName);
     }
 
     /**
